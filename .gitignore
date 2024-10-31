@@ -1,1 +1,5 @@
 /.idea/
+/star-wars-planets/.mvn/wrapper/maven-wrapper.properties
+/star-wars-planets/.gitattributes
+/star-wars-planets/mvnw.cmd
+/star-wars-planets/mvnw
