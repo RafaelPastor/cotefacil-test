@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Planet List</title>
+</h:head>
+<h:body>
+    <ui:composition template="/templates/main.xhtml">
+        <ui:define name="content">
+            <h:form id="planetForm">
+                <p:dataTable value="#{planetBean.planets}" var="planet" rows="10" paginator="true">
+                    <p:column headerText="Name">
+                        <h:outputText value="#{planet.name}" />
+                    </p:column>
+                    <p:column headerText="Population">
+                        <h:outputText value="#{planet.population}" />
+                    </p:column>
+                    <p:column headerText="Appearances">
+                        <p:commandButton value="Show Appearances" action="#{planetBean.fetchAppearances(planet.name)}" update=":planetForm:appearanceDialog" />
+                    </p:column>
+                </p:dataTable>
+                <p:dialog header="Planet Appearances" widgetVar="appearanceDialog" modal="true" id="appearanceDialog">
+                    <h:panelGrid columns="1">
+                        <h:outputText value="#{planetBean.planetAppearances}" />
+                    </h:panelGrid>
+                </p:dialog>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
