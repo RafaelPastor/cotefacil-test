@@ -1,0 +1,14 @@
+<mat-drawer-container style="height: 100vh;" class="example-container" [hasBackdrop]="true">
+    <mat-drawer #drawer [mode]="'over'">
+        <div style="display: flex; flex-direction: column;">
+            <button class="buttonNg" routerLink="/" (click)="drawer.toggle()" mat-stroked-button>List page</button>
+            <button class="buttonNg" routerLink="save" (click)="drawer.toggle()" mat-stroked-button>Add planet</button>
+        </div>
+    </mat-drawer>
+
+    <button mat-raised-button style="margin: 1.5vh 0vw 1.5vh 2.5vw;" (click)="drawer.toggle()">More options</button>
+
+    <router-outlet>
+    </router-outlet>
+
+</mat-drawer-container>

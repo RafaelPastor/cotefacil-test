@@ -1,0 +1,3 @@
+Para criar a branch de correção de erro para a master, se deve fazer uma nova branch a partir da master, é chamada de "hotfix/description-shortly-of-bug"
+
+Para criar a branch de nova feature, nescessariamente a partir da develop, é nomeado de "feature/description-shortly-of-this-new-feature"
